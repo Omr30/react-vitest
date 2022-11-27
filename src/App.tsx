@@ -1,7 +1,14 @@
+import Accordion from "./components/Accordion"
 
 const App = () => {
   return (
-    <div>Hello world</div>
+    <div>
+      <Accordion title="Mas informacion">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, fugiat?
+        </p>
+      </Accordion>
+    </div>
   )
 }
 

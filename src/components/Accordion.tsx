@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 type AccordionProps = {
     title: string,
@@ -5,12 +6,26 @@ type AccordionProps = {
 }
 
 const Accordion = ({title, children}: AccordionProps) => {
+
+  const [open, setOpen] = useState(false)
+
   return (
     <div>
-        <h3>{title}</h3>
         <div>
-            {children}
+          <h3>{title}</h3>
+          <button
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            {
+              open? 'Close': 'Open'
+            }
+          </button>
         </div>
+        {
+          open && <div>{children}</div>
+        }
     </div>
   )
 }
